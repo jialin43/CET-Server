@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.nwafu.cet.dao.DensityMapper">
+
+    <resultMap id="BaseResultMap" type="cn.nwafu.cet.model.Density">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="cas" jdbcType="VARCHAR" property="cas"/>
+        <result column="solid" jdbcType="VARCHAR" property="solid"/>
+        <result column="qchemical" jdbcType="DOUBLE" property="qchemical"/>
+        <result column="molw" jdbcType="DOUBLE" property="molw"/>
+        <result column="vp_temptest" jdbcType="DOUBLE" property="vpTemptest"/>
+        <result column="temp_vptest" jdbcType="DOUBLE" property="tempVptest"/>
+        <result column="vp" jdbcType="DOUBLE" property="vp"/>
+        <result column="sol_temp_test" jdbcType="DOUBLE" property="solTempTest"/>
+        <result column="temp_soltest" jdbcType="DOUBLE" property="tempSoltest"/>
+        <result column="sol" jdbcType="DOUBLE" property="sol"/>
+        <result column="koc" jdbcType="DOUBLE" property="koc"/>
+        <result column="kow" jdbcType="DOUBLE" property="kow"/>
+        <result column="biodeg" jdbcType="VARCHAR" property="biodeg"/>
+        <result column="tempmelt" jdbcType="DOUBLE" property="tempmelt"/>
+        <result column="vpl" jdbcType="DOUBLE" property="vpl"/>
+        <result column="conjunge" jdbcType="DOUBLE" property="conjunge"/>
+        <result column="surf_aer" jdbcType="DOUBLE" property="surfAer"/>
+        <result column="henry" jdbcType="DOUBLE" property="henry"/>
+        <result column="kair_water" jdbcType="DOUBLE" property="kairWater"/>
+        <result column="fass_aer" jdbcType="DOUBLE" property="fassAer"/>
+        <result column="kp_soil" jdbcType="DOUBLE" property="kpSoil"/>
+        <result column="kp_susp" jdbcType="DOUBLE" property="kpSusp"/>
+        <result column="kp_sed" jdbcType="DOUBLE" property="kpSed"/>
+        <result column="ksoil_water" jdbcType="DOUBLE" property="ksoilWater"/>
+        <result column="ksusp_water" jdbcType="DOUBLE" property="ksuspWater"/>
+        <result column="ksed_water" jdbcType="DOUBLE" property="ksedWater"/>
+        <result column="bmf1" jdbcType="DOUBLE" property="bmf1"/>
+        <result column="bmf2" jdbcType="DOUBLE" property="bmf2"/>
+        <result column="bcf_worm" jdbcType="DOUBLE" property="bcfWorm"/>
+        <result column="khydr_water" jdbcType="DOUBLE" property="khydrWater"/>
+        <result column="kbio_stp" jdbcType="DOUBLE" property="kbioStp"/>
+        <result column="kdeg_stp" jdbcType="DOUBLE" property="kdegStp"/>
+        <result column="kdeg_stp2" jdbcType="DOUBLE" property="kdegStp2"/>
+        <result column="kdeg_air" jdbcType="DOUBLE" property="kdegAir"/>
+        <result column="kphoto_water" jdbcType="DOUBLE" property="kphotoWater"/>
+        <result column="kbio_sed" jdbcType="DOUBLE" property="kbioSed"/>
+        <result column="kbio_fresh" jdbcType="DOUBLE" property="kbioFresh"/>
+        <result column="kbio_soil" jdbcType="DOUBLE" property="kbioSoil"/>
+        <result column="bcf_fish" jdbcType="DOUBLE" property="bcfFish"/>
+        <result column="source_type" jdbcType="VARCHAR" property="sourceType"/>
+        <result column="elocal_water" jdbcType="DOUBLE" property="elocalWater"/>
+        <result column="elocal_air" jdbcType="DOUBLE" property="elocalAir"/>
+        <result column="elocal_directwater" jdbcType="DOUBLE" property="elocalDirectwater"/>
+        <result column="temission" jdbcType="DOUBLE" property="temission"/>
+        <result column="femisssion_water" jdbcType="DOUBLE" property="femisssionWater"/>
+        <result column="femisssion_air" jdbcType="DOUBLE" property="femisssionAir"/>
+        <result column="femisssion_soil" jdbcType="DOUBLE" property="femisssionSoil"/>
+        <result column="fmainsource" jdbcType="DOUBLE" property="fmainsource"/>
+        <result column="fabatement_water" jdbcType="DOUBLE" property="fabatementWater"/>
+        <result column="fabatement_air" jdbcType="DOUBLE" property="fabatementAir"/>
+        <result column="elocal_soil" jdbcType="DOUBLE" property="elocalSoil"/>
+        <result column="fabatement_soil" jdbcType="DOUBLE" property="fabatementSoil"/>
+        <result column="fstp_water" jdbcType="DOUBLE" property="fstpWater"/>
+        <result column="fstp_air" jdbcType="DOUBLE" property="fstpAir"/>
+        <result column="fstp_sludge" jdbcType="DOUBLE" property="fstpSludge"/>
+        <result column="fstp_degrade" jdbcType="DOUBLE" property="fstpDegrade"/>
+        <result column="fstp_total" jdbcType="DOUBLE" property="fstpTotal"/>
+        <result column="fstp_water2" jdbcType="DOUBLE" property="fstpWater2"/>
+        <result column="fstp_air2" jdbcType="DOUBLE" property="fstpAir2"/>
+        <result column="fstp_sludge2" jdbcType="DOUBLE" property="fstpSludge2"/>
+        <result column="fstp_degrade2" jdbcType="DOUBLE" property="fstpDegrade2"/>
+        <result column="fstp_total2" jdbcType="DOUBLE" property="fstpTotal2"/>
+        <result column="elocalstp_water" jdbcType="DOUBLE" property="elocalstpWater"/>
+        <result column="elocalstp_air" jdbcType="DOUBLE" property="elocalstpAir"/>
+        <result column="csludge" jdbcType="DOUBLE" property="csludge"/>
+        <result column="sludgerate" jdbcType="DOUBLE" property="sludgerate"/>
+        <result column="clocal_water" jdbcType="DOUBLE" property="clocalWater"/>
+        <result column="clocal_directwater" jdbcType="DOUBLE" property="clocalDirectwater"/>
+        <result column="deptotal" jdbcType="DOUBLE" property="deptotal"/>
+        <result column="depstd_aer" jdbcType="DOUBLE" property="depstdAer"/>
+        <result column="depstd_gas" jdbcType="DOUBLE" property="depstdGas"/>
+        <result column="deptotal_ann" jdbcType="DOUBLE" property="deptotalAnn"/>
+        <result column="dair" jdbcType="DOUBLE" property="dair"/>
+        <result column="cstd_air" jdbcType="DOUBLE" property="cstdAir"/>
+        <result column="peclocal_air_ann" jdbcType="DOUBLE" property="peclocalAirAnn"/>
+        <result column="k_soil" jdbcType="DOUBLE" property="kSoil"/>
+        <result column="kvolat" jdbcType="DOUBLE" property="kvolat"/>
+        <result column="kasl_air" jdbcType="DOUBLE" property="kaslAir"/>
+        <result column="kasl_soil" jdbcType="DOUBLE" property="kaslSoil"/>
+        <result column="corr_volat_s" jdbcType="DOUBLE" property="corrVolatS"/>
+        <result column="kleach" jdbcType="DOUBLE" property="kleach"/>
+        <result column="finf_soil" jdbcType="DOUBLE" property="finfSoil"/>
+        <result column="veff_s1r" jdbcType="DOUBLE" property="veffS1r"/>
+        <result column="deff_s1r" jdbcType="DOUBLE" property="deffS1r"/>
+        <result column="dp" jdbcType="DOUBLE" property="dp"/>
+        <result column="csoil_ten_0" jdbcType="DOUBLE" property="csoilTen0"/>
+        <result column="csoil_five_0" jdbcType="DOUBLE" property="csoilFive0"/>
+        <result column="cdep_soil_ten_0" jdbcType="DOUBLE" property="cdepSoilTen0"/>
+        <result column="cdep_soil_five_0" jdbcType="DOUBLE" property="cdepSoilFive0"/>
+        <result column="csludge_soil_one_0" jdbcType="DOUBLE" property="csludgeSoilOne0"/>
+        <result column="csludge_soil_ten_0" jdbcType="DOUBLE" property="csludgeSoilTen0"/>
+        <result column="csludge_soil_five_0" jdbcType="DOUBLE" property="csludgeSoilFive0"/>
+        <result column="facc" jdbcType="DOUBLE" property="facc"/>
+        <result column="clocal_soil_30" jdbcType="DOUBLE" property="clocalSoil30"/>
+        <result column="clocal_soil_180" jdbcType="DOUBLE" property="clocalSoil180"/>
+        <result column="tav_soil" jdbcType="DOUBLE" property="tavSoil"/>
+        <result column="peclocal_soil_porew" jdbcType="DOUBLE" property="peclocalSoilPorew"/>
+        <result column="cfish" jdbcType="DOUBLE" property="cfish"/>
+        <result column="pecaqu_predator" jdbcType="DOUBLE" property="pecaquPredator"/>
+        <result column="pecaqu_toppredator" jdbcType="DOUBLE" property="pecaquToppredator"/>
+        <result column="pecter_predator" jdbcType="DOUBLE" property="pecterPredator"/>
+        <result column="pecreg_air" jdbcType="DOUBLE" property="pecregAir"/>
+        <result column="pecreg_water" jdbcType="DOUBLE" property="pecregWater"/>
+        <result column="pecreg_soil" jdbcType="DOUBLE" property="pecregSoil"/>
+        <result column="pecreg_soil_porew" jdbcType="DOUBLE" property="pecregSoilPorew"/>
+        <result column="pecstp" jdbcType="DOUBLE" property="pecstp"/>
+        <result column="peclocal_water" jdbcType="DOUBLE" property="peclocalWater"/>
+        <result column="peclocal_water_ann" jdbcType="DOUBLE" property="peclocalWaterAnn"/>
+        <result column="peclocal_sed" jdbcType="DOUBLE" property="peclocalSed"/>
+        <result column="peclocal_soil_30" jdbcType="DOUBLE" property="peclocalSoil30"/>
+        <result column="peclocal_soil_180" jdbcType="DOUBLE" property="peclocalSoil180"/>
+        <result column="peclocal_grw" jdbcType="DOUBLE" property="peclocalGrw"/>
+        <result column="f_pur" jdbcType="DOUBLE" property="fPur"/>
+        <result column="pec_drwl" jdbcType="DOUBLE" property="pecDrwl"/>
+        <result column="addinh" jdbcType="DOUBLE" property="addinh"/>
+        <result column="addoral_soil" jdbcType="DOUBLE" property="addoralSoil"/>
+        <result column="addoral_fish" jdbcType="DOUBLE" property="addoralFish"/>
+        <result column="addoral_water" jdbcType="DOUBLE" property="addoralWater"/>
+        <result column="addt" jdbcType="DOUBLE" property="addt"/>
+        <result column="pecstp_pnec" jdbcType="DOUBLE" property="pecstpPnec"/>
+        <result column="peclocal_water_pnec" jdbcType="DOUBLE" property="peclocalWaterPnec"/>
+        <result column="peclocal_sed_pnec" jdbcType="DOUBLE" property="peclocalSedPnec"/>
+        <result column="peclocal_soil_30_pnec" jdbcType="DOUBLE" property="peclocalSoil30Pnec"/>
+        <result column="peclocal_grw_pnec" jdbcType="DOUBLE" property="peclocalGrwPnec"/>
+        <result column="pecaqu_predator_pnec" jdbcType="DOUBLE" property="pecaquPredatorPnec"/>
+        <result column="pecter_predator_pnec" jdbcType="DOUBLE" property="pecterPredatorPnec"/>
+        <result column="addinh_dnel" jdbcType="DOUBLE" property="addinhDnel"/>
+        <result column="addoral_water_dnel" jdbcType="DOUBLE" property="addoralWaterDnel"/>
+        <result column="addoral_food_dnel" jdbcType="DOUBLE" property="addoralFoodDnel"/>
+        <result column="addt_dnel" jdbcType="DOUBLE" property="addtDnel"/>
+        <result column="creator" jdbcType="VARCHAR" property="creator" />
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    </resultMap>
+
+    <insert id="add" parameterType="cn.nwafu.cet.model.Density">
+        insert into density
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cas != null">
+                cas,
+            </if>
+            <if test="solid != null">
+                solid,
+            </if>
+            <if test="qchemical != null">
+                qchemical,
+            </if>
+            <if test="molw != null">
+                molw,
+            </if>
+            <if test="vpTemptest != null">
+                vp_temptest,
+            </if>
+            <if test="tempVptest != null">
+                temp_vptest,
+            </if>
+            <if test="vp != null">
+                vp,
+            </if>
+            <if test="solTempTest != null">
+                sol_temp_test,
+            </if>
+            <if test="tempSoltest != null">
+                temp_soltest,
+            </if>
+            <if test="sol != null">
+                sol,
+            </if>
+            <if test="koc != null">
+                koc,
+            </if>
+            <if test="kow != null">
+                kow,
+            </if>
+            <if test="biodeg != null">
+                biodeg,
+            </if>
+            <if test="tempmelt != null">
+                tempmelt,
+            </if>
+            <if test="vpl != null">
+                vpl,
+            </if>
+            <if test="conjunge != null">
+                conjunge,
+            </if>
+            <if test="surfAer != null">
+                surf_aer,
+            </if>
+            <if test="henry != null">
+                henry,
+            </if>
+            <if test="kairWater != null">
+                kair_water,
+            </if>
+            <if test="fassAer != null">
+                fass_aer,
+            </if>
+            <if test="kpSoil != null">
+                kp_soil,
+            </if>
+            <if test="kpSusp != null">
+                kp_susp,
+            </if>
+            <if test="kpSed != null">
+                kp_sed,
+            </if>
+            <if test="ksoilWater != null">
+                ksoil_water,
+            </if>
+            <if test="ksuspWater != null">
+                ksusp_water,
+            </if>
+            <if test="ksedWater != null">
+                ksed_water,
+            </if>
+            <if test="bmf1 != null">
+                bmf1,
+            </if>
+            <if test="bmf2 != null">
+                bmf2,
+            </if>
+            <if test="bcfWorm != null">
+                bcf_worm,
+            </if>
+            <if test="khydrWater != null">
+                khydr_water,
+            </if>
+            <if test="kbioStp != null">
+                kbio_stp,
+            </if>
+            <if test="kdegStp != null">
+                kdeg_stp,
+            </if>
+            <if test="kdegStp2 != null">
+                kdeg_stp2,
+            </if>
+            <if test="kdegAir != null">
+                kdeg_air,
+            </if>
+            <if test="kphotoWater != null">
+                kphoto_water,
+            </if>
+            <if test="kbioSed != null">
+                kbio_sed,
+            </if>
+            <if test="kbioFresh != null">
+                kbio_fresh,
+            </if>
+            <if test="kbioSoil != null">
+                kbio_soil,
+            </if>
+            <if test="bcfFish != null">
+                bcf_fish,
+            </if>
+            <if test="sourceType != null">
+                source_type,
+            </if>
+            <if test="elocalWater != null">
+                elocal_water,
+            </if>
+            <if test="elocalAir != null">
+                elocal_air,
+            </if>
+            <if test="elocalDirectwater != null">
+                elocal_directwater,
+            </if>
+            <if test="temission != null">
+                temission,
+            </if>
+            <if test="femisssionWater != null">
+                femisssion_water,
+            </if>
+            <if test="femisssionAir != null">
+                femisssion_air,
+            </if>
+            <if test="femisssionSoil != null">
+                femisssion_soil,
+            </if>
+            <if test="fmainsource != null">
+                fmainsource,
+            </if>
+            <if test="fabatementWater != null">
+                fabatement_water,
+            </if>
+            <if test="fabatementAir != null">
+                fabatement_air,
+            </if>
+            <if test="elocalSoil != null">
+                elocal_soil,
+            </if>
+            <if test="fabatementSoil != null">
+                fabatement_soil,
+            </if>
+            <if test="fstpWater != null">
+                fstp_water,
+            </if>
+            <if test="fstpAir != null">
+                fstp_air,
+            </if>
+            <if test="fstpSludge != null">
+                fstp_sludge,
+            </if>
+            <if test="fstpDegrade != null">
+                fstp_degrade,
+            </if>
+            <if test="fstpTotal != null">
+                fstp_total,
+            </if>
+            <if test="fstpWater2 != null">
+                fstp_water2,
+            </if>
+            <if test="fstpAir2 != null">
+                fstp_air2,
+            </if>
+            <if test="fstpSludge2 != null">
+                fstp_sludge2,
+            </if>
+            <if test="fstpDegrade2 != null">
+                fstp_degrade2,
+            </if>
+            <if test="fstpTotal2 != null">
+                fstp_total2,
+            </if>
+            <if test="elocalstpWater != null">
+                elocalstp_water,
+            </if>
+            <if test="elocalstpAir != null">
+                elocalstp_air,
+            </if>
+            <if test="csludge != null">
+                csludge,
+            </if>
+            <if test="sludgerate != null">
+                sludgerate,
+            </if>
+            <if test="clocalWater != null">
+                clocal_water,
+            </if>
+            <if test="clocalDirectwater != null">
+                clocal_directwater,
+            </if>
+            <if test="deptotal != null">
+                deptotal,
+            </if>
+            <if test="depstdAer != null">
+                depstd_aer,
+            </if>
+            <if test="depstdGas != null">
+                depstd_gas,
+            </if>
+            <if test="deptotalAnn != null">
+                deptotal_ann,
+            </if>
+            <if test="dair != null">
+                dair,
+            </if>
+            <if test="cstdAir != null">
+                cstd_air,
+            </if>
+            <if test="peclocalAirAnn != null">
+                peclocal_air_ann,
+            </if>
+            <if test="kSoil != null">
+                k_soil,
+            </if>
+            <if test="kvolat != null">
+                kvolat,
+            </if>
+            <if test="kaslAir != null">
+                kasl_air,
+            </if>
+            <if test="kaslSoil != null">
+                kasl_soil,
+            </if>
+            <if test="corrVolatS != null">
+                corr_volat_s,
+            </if>
+            <if test="kleach != null">
+                kleach,
+            </if>
+            <if test="finfSoil != null">
+                finf_soil,
+            </if>
+            <if test="veffS1r != null">
+                veff_s1r,
+            </if>
+            <if test="deffS1r != null">
+                deff_s1r,
+            </if>
+            <if test="dp != null">
+                dp,
+            </if>
+            <if test="csoilTen0 != null">
+                csoil_ten_0,
+            </if>
+            <if test="csoilFive0 != null">
+                csoil_five_0,
+            </if>
+            <if test="cdepSoilTen0 != null">
+                cdep_soil_ten_0,
+            </if>
+            <if test="cdepSoilFive0 != null">
+                cdep_soil_five_0,
+            </if>
+            <if test="csludgeSoilOne0 != null">
+                csludge_soil_one_0,
+            </if>
+            <if test="csludgeSoilTen0 != null">
+                csludge_soil_ten_0,
+            </if>
+            <if test="csludgeSoilFive0 != null">
+                csludge_soil_five_0,
+            </if>
+            <if test="facc != null">
+                facc,
+            </if>
+            <if test="clocalSoil30 != null">
+                clocal_soil_30,
+            </if>
+            <if test="clocalSoil180 != null">
+                clocal_soil_180,
+            </if>
+            <if test="tavSoil != null">
+                tav_soil,
+            </if>
+            <if test="peclocalSoilPorew != null">
+                peclocal_soil_porew,
+            </if>
+            <if test="cfish != null">
+                cfish,
+            </if>
+            <if test="pecaquPredator != null">
+                pecaqu_predator,
+            </if>
+            <if test="pecaquToppredator != null">
+                pecaqu_toppredator,
+            </if>
+            <if test="pecterPredator != null">
+                pecter_predator,
+            </if>
+            <if test="pecregAir != null">
+                pecreg_air,
+            </if>
+            <if test="pecregWater != null">
+                pecreg_water,
+            </if>
+            <if test="pecregSoil != null">
+                pecreg_soil,
+            </if>
+            <if test="pecregSoilPorew != null">
+                pecreg_soil_porew,
+            </if>
+            <if test="pecstp != null">
+                pecstp,
+            </if>
+            <if test="peclocalWater != null">
+                peclocal_water,
+            </if>
+            <if test="peclocalWaterAnn != null">
+                peclocal_water_ann,
+            </if>
+            <if test="peclocalSed != null">
+                peclocal_sed,
+            </if>
+            <if test="peclocalSoil30 != null">
+                peclocal_soil_30,
+            </if>
+            <if test="peclocalSoil180 != null">
+                peclocal_soil_180,
+            </if>
+            <if test="peclocalGrw != null">
+                peclocal_grw,
+            </if>
+            <if test="fPur != null">
+                f_pur,
+            </if>
+            <if test="pecDrwl != null">
+                pec_drwl,
+            </if>
+            <if test="addinh != null">
+                addinh,
+            </if>
+            <if test="addoralSoil != null">
+                addoral_soil,
+            </if>
+            <if test="addoralFish != null">
+                addoral_fish,
+            </if>
+            <if test="addoralWater != null">
+                addoral_water,
+            </if>
+            <if test="addt != null">
+                addt,
+            </if>
+            <if test="pecstpPnec != null">
+                pecstp_pnec,
+            </if>
+            <if test="peclocalWaterPnec != null">
+                peclocal_water_pnec,
+            </if>
+            <if test="peclocalSedPnec != null">
+                peclocal_sed_pnec,
+            </if>
+            <if test="peclocalSoil30Pnec != null">
+                peclocal_soil_30_pnec,
+            </if>
+            <if test="peclocalGrwPnec != null">
+                peclocal_grw_pnec,
+            </if>
+            <if test="pecaquPredatorPnec != null">
+                pecaqu_predator_pnec,
+            </if>
+            <if test="pecterPredatorPnec != null">
+                pecter_predator_pnec,
+            </if>
+            <if test="addinhDnel != null">
+                addinh_dnel,
+            </if>
+            <if test="addoralWaterDnel != null">
+                addoral_water_dnel,
+            </if>
+            <if test="addoralFoodDnel != null">
+                addoral_food_dnel,
+            </if>
+            <if test="addtDnel != null">
+                addt_dnel,
+            </if>
+            <if test="creator != null">
+                creator,
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create,
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cas != null">
+                #{cas,jdbcType=VARCHAR},
+            </if>
+            <if test="solid != null">
+                #{solid,jdbcType=VARCHAR},
+            </if>
+            <if test="qchemical != null">
+                #{qchemical,jdbcType=DOUBLE},
+            </if>
+            <if test="molw != null">
+                #{molw,jdbcType=DOUBLE},
+            </if>
+            <if test="vpTemptest != null">
+                #{vpTemptest,jdbcType=DOUBLE},
+            </if>
+            <if test="tempVptest != null">
+                #{tempVptest,jdbcType=DOUBLE},
+            </if>
+            <if test="vp != null">
+                #{vp,jdbcType=DOUBLE},
+            </if>
+            <if test="solTempTest != null">
+                #{solTempTest,jdbcType=DOUBLE},
+            </if>
+            <if test="tempSoltest != null">
+                #{tempSoltest,jdbcType=DOUBLE},
+            </if>
+            <if test="sol != null">
+                #{sol,jdbcType=DOUBLE},
+            </if>
+            <if test="koc != null">
+                #{koc,jdbcType=DOUBLE},
+            </if>
+            <if test="kow != null">
+                #{kow,jdbcType=DOUBLE},
+            </if>
+            <if test="biodeg != null">
+                #{biodeg,jdbcType=VARCHAR},
+            </if>
+            <if test="tempmelt != null">
+                #{tempmelt,jdbcType=DOUBLE},
+            </if>
+            <if test="vpl != null">
+                #{vpl,jdbcType=DOUBLE},
+            </if>
+            <if test="conjunge != null">
+                #{conjunge,jdbcType=DOUBLE},
+            </if>
+            <if test="surfAer != null">
+                #{surfAer,jdbcType=DOUBLE},
+            </if>
+            <if test="henry != null">
+                #{henry,jdbcType=DOUBLE},
+            </if>
+            <if test="kairWater != null">
+                #{kairWater,jdbcType=DOUBLE},
+            </if>
+            <if test="fassAer != null">
+                #{fassAer,jdbcType=DOUBLE},
+            </if>
+            <if test="kpSoil != null">
+                #{kpSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="kpSusp != null">
+                #{kpSusp,jdbcType=DOUBLE},
+            </if>
+            <if test="kpSed != null">
+                #{kpSed,jdbcType=DOUBLE},
+            </if>
+            <if test="ksoilWater != null">
+                #{ksoilWater,jdbcType=DOUBLE},
+            </if>
+            <if test="ksuspWater != null">
+                #{ksuspWater,jdbcType=DOUBLE},
+            </if>
+            <if test="ksedWater != null">
+                #{ksedWater,jdbcType=DOUBLE},
+            </if>
+            <if test="bmf1 != null">
+                #{bmf1,jdbcType=DOUBLE},
+            </if>
+            <if test="bmf2 != null">
+                #{bmf2,jdbcType=DOUBLE},
+            </if>
+            <if test="bcfWorm != null">
+                #{bcfWorm,jdbcType=DOUBLE},
+            </if>
+            <if test="khydrWater != null">
+                #{khydrWater,jdbcType=DOUBLE},
+            </if>
+            <if test="kbioStp != null">
+                #{kbioStp,jdbcType=DOUBLE},
+            </if>
+            <if test="kdegStp != null">
+                #{kdegStp,jdbcType=DOUBLE},
+            </if>
+            <if test="kdegStp2 != null">
+                #{kdegStp2,jdbcType=DOUBLE},
+            </if>
+            <if test="kdegAir != null">
+                #{kdegAir,jdbcType=DOUBLE},
+            </if>
+            <if test="kphotoWater != null">
+                #{kphotoWater,jdbcType=DOUBLE},
+            </if>
+            <if test="kbioSed != null">
+                #{kbioSed,jdbcType=DOUBLE},
+            </if>
+            <if test="kbioFresh != null">
+                #{kbioFresh,jdbcType=DOUBLE},
+            </if>
+            <if test="kbioSoil != null">
+                #{kbioSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="bcfFish != null">
+                #{bcfFish,jdbcType=DOUBLE},
+            </if>
+            <if test="sourceType != null">
+                #{sourceType,jdbcType=VARCHAR},
+            </if>
+            <if test="elocalWater != null">
+                #{elocalWater,jdbcType=DOUBLE},
+            </if>
+            <if test="elocalAir != null">
+                #{elocalAir,jdbcType=DOUBLE},
+            </if>
+            <if test="elocalDirectwater != null">
+                #{elocalDirectwater,jdbcType=DOUBLE},
+            </if>
+            <if test="temission != null">
+                #{temission,jdbcType=DOUBLE},
+            </if>
+            <if test="femisssionWater != null">
+                #{femisssionWater,jdbcType=DOUBLE},
+            </if>
+            <if test="femisssionAir != null">
+                #{femisssionAir,jdbcType=DOUBLE},
+            </if>
+            <if test="femisssionSoil != null">
+                #{femisssionSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fmainsource != null">
+                #{fmainsource,jdbcType=DOUBLE},
+            </if>
+            <if test="fabatementWater != null">
+                #{fabatementWater,jdbcType=DOUBLE},
+            </if>
+            <if test="fabatementAir != null">
+                #{fabatementAir,jdbcType=DOUBLE},
+            </if>
+            <if test="elocalSoil != null">
+                #{elocalSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fabatementSoil != null">
+                #{fabatementSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpWater != null">
+                #{fstpWater,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpAir != null">
+                #{fstpAir,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpSludge != null">
+                #{fstpSludge,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpDegrade != null">
+                #{fstpDegrade,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpTotal != null">
+                #{fstpTotal,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpWater2 != null">
+                #{fstpWater2,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpAir2 != null">
+                #{fstpAir2,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpSludge2 != null">
+                #{fstpSludge2,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpDegrade2 != null">
+                #{fstpDegrade2,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpTotal2 != null">
+                #{fstpTotal2,jdbcType=DOUBLE},
+            </if>
+            <if test="elocalstpWater != null">
+                #{elocalstpWater,jdbcType=DOUBLE},
+            </if>
+            <if test="elocalstpAir != null">
+                #{elocalstpAir,jdbcType=DOUBLE},
+            </if>
+            <if test="csludge != null">
+                #{csludge,jdbcType=DOUBLE},
+            </if>
+            <if test="sludgerate != null">
+                #{sludgerate,jdbcType=DOUBLE},
+            </if>
+            <if test="clocalWater != null">
+                #{clocalWater,jdbcType=DOUBLE},
+            </if>
+            <if test="clocalDirectwater != null">
+                #{clocalDirectwater,jdbcType=DOUBLE},
+            </if>
+            <if test="deptotal != null">
+                #{deptotal,jdbcType=DOUBLE},
+            </if>
+            <if test="depstdAer != null">
+                #{depstdAer,jdbcType=DOUBLE},
+            </if>
+            <if test="depstdGas != null">
+                #{depstdGas,jdbcType=DOUBLE},
+            </if>
+            <if test="deptotalAnn != null">
+                #{deptotalAnn,jdbcType=DOUBLE},
+            </if>
+            <if test="dair != null">
+                #{dair,jdbcType=DOUBLE},
+            </if>
+            <if test="cstdAir != null">
+                #{cstdAir,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalAirAnn != null">
+                #{peclocalAirAnn,jdbcType=DOUBLE},
+            </if>
+            <if test="kSoil != null">
+                #{kSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="kvolat != null">
+                #{kvolat,jdbcType=DOUBLE},
+            </if>
+            <if test="kaslAir != null">
+                #{kaslAir,jdbcType=DOUBLE},
+            </if>
+            <if test="kaslSoil != null">
+                #{kaslSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="corrVolatS != null">
+                #{corrVolatS,jdbcType=DOUBLE},
+            </if>
+            <if test="kleach != null">
+                #{kleach,jdbcType=DOUBLE},
+            </if>
+            <if test="finfSoil != null">
+                #{finfSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="veffS1r != null">
+                #{veffS1r,jdbcType=DOUBLE},
+            </if>
+            <if test="deffS1r != null">
+                #{deffS1r,jdbcType=DOUBLE},
+            </if>
+            <if test="dp != null">
+                #{dp,jdbcType=DOUBLE},
+            </if>
+            <if test="csoilTen0 != null">
+                #{csoilTen0,jdbcType=DOUBLE},
+            </if>
+            <if test="csoilFive0 != null">
+                #{csoilFive0,jdbcType=DOUBLE},
+            </if>
+            <if test="cdepSoilTen0 != null">
+                #{cdepSoilTen0,jdbcType=DOUBLE},
+            </if>
+            <if test="cdepSoilFive0 != null">
+                #{cdepSoilFive0,jdbcType=DOUBLE},
+            </if>
+            <if test="csludgeSoilOne0 != null">
+                #{csludgeSoilOne0,jdbcType=DOUBLE},
+            </if>
+            <if test="csludgeSoilTen0 != null">
+                #{csludgeSoilTen0,jdbcType=DOUBLE},
+            </if>
+            <if test="csludgeSoilFive0 != null">
+                #{csludgeSoilFive0,jdbcType=DOUBLE},
+            </if>
+            <if test="facc != null">
+                #{facc,jdbcType=DOUBLE},
+            </if>
+            <if test="clocalSoil30 != null">
+                #{clocalSoil30,jdbcType=DOUBLE},
+            </if>
+            <if test="clocalSoil180 != null">
+                #{clocalSoil180,jdbcType=DOUBLE},
+            </if>
+            <if test="tavSoil != null">
+                #{tavSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSoilPorew != null">
+                #{peclocalSoilPorew,jdbcType=DOUBLE},
+            </if>
+            <if test="cfish != null">
+                #{cfish,jdbcType=DOUBLE},
+            </if>
+            <if test="pecaquPredator != null">
+                #{pecaquPredator,jdbcType=DOUBLE},
+            </if>
+            <if test="pecaquToppredator != null">
+                #{pecaquToppredator,jdbcType=DOUBLE},
+            </if>
+            <if test="pecterPredator != null">
+                #{pecterPredator,jdbcType=DOUBLE},
+            </if>
+            <if test="pecregAir != null">
+                #{pecregAir,jdbcType=DOUBLE},
+            </if>
+            <if test="pecregWater != null">
+                #{pecregWater,jdbcType=DOUBLE},
+            </if>
+            <if test="pecregSoil != null">
+                #{pecregSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="pecregSoilPorew != null">
+                #{pecregSoilPorew,jdbcType=DOUBLE},
+            </if>
+            <if test="pecstp != null">
+                #{pecstp,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalWater != null">
+                #{peclocalWater,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalWaterAnn != null">
+                #{peclocalWaterAnn,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSed != null">
+                #{peclocalSed,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSoil30 != null">
+                #{peclocalSoil30,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSoil180 != null">
+                #{peclocalSoil180,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalGrw != null">
+                #{peclocalGrw,jdbcType=DOUBLE},
+            </if>
+            <if test="fPur != null">
+                #{fPur,jdbcType=DOUBLE},
+            </if>
+            <if test="pecDrwl != null">
+                #{pecDrwl,jdbcType=DOUBLE},
+            </if>
+            <if test="addinh != null">
+                #{addinh,jdbcType=DOUBLE},
+            </if>
+            <if test="addoralSoil != null">
+                #{addoralSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="addoralFish != null">
+                #{addoralFish,jdbcType=DOUBLE},
+            </if>
+            <if test="addoralWater != null">
+                #{addoralWater,jdbcType=DOUBLE},
+            </if>
+            <if test="addt != null">
+                #{addt,jdbcType=DOUBLE},
+            </if>
+            <if test="pecstpPnec != null">
+                #{pecstpPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalWaterPnec != null">
+                #{peclocalWaterPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSedPnec != null">
+                #{peclocalSedPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSoil30Pnec != null">
+                #{peclocalSoil30Pnec,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalGrwPnec != null">
+                #{peclocalGrwPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="pecaquPredatorPnec != null">
+                #{pecaquPredatorPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="pecterPredatorPnec != null">
+                #{pecterPredatorPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="addinhDnel != null">
+                #{addinhDnel,jdbcType=DOUBLE},
+            </if>
+            <if test="addoralWaterDnel != null">
+                #{addoralWaterDnel,jdbcType=DOUBLE},
+            </if>
+            <if test="addoralFoodDnel != null">
+                #{addoralFoodDnel,jdbcType=DOUBLE},
+            </if>
+            <if test="addtDnel != null">
+                #{addtDnel,jdbcType=DOUBLE},
+            </if>
+            <if test="creator != null">
+                #{creator,jdbcType=VARCHAR},
+            </if>
+            <if test="gmtCreate != null">
+                #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+    delete from density
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+    <update id="update" parameterType="cn.nwafu.cet.model.Density">
+        update density
+        <set>
+            <if test="solid != null">
+                solid = #{solid,jdbcType=TINYINT},
+            </if>
+            <if test="qchemical != null">
+                qchemical = #{qchemical,jdbcType=DOUBLE},
+            </if>
+            <if test="molw != null">
+                molw = #{molw,jdbcType=DOUBLE},
+            </if>
+            <if test="vpTemptest != null">
+                vp_temptest = #{vpTemptest,jdbcType=DOUBLE},
+            </if>
+            <if test="tempVptest != null">
+                temp_vptest = #{tempVptest,jdbcType=DOUBLE},
+            </if>
+            <if test="vp != null">
+                vp = #{vp,jdbcType=DOUBLE},
+            </if>
+            <if test="solTempTest != null">
+                sol_temp_test = #{solTempTest,jdbcType=DOUBLE},
+            </if>
+            <if test="tempSoltest != null">
+                temp_soltest = #{tempSoltest,jdbcType=DOUBLE},
+            </if>
+            <if test="sol != null">
+                sol = #{sol,jdbcType=DOUBLE},
+            </if>
+            <if test="koc != null">
+                koc = #{koc,jdbcType=DOUBLE},
+            </if>
+            <if test="kow != null">
+                kow = #{kow,jdbcType=DOUBLE},
+            </if>
+            <if test="biodeg != null">
+                biodeg = #{biodeg,jdbcType=VARCHAR},
+            </if>
+            <if test="tempmelt != null">
+                tempmelt = #{tempmelt,jdbcType=DOUBLE},
+            </if>
+            <if test="vpl != null">
+                vpl = #{vpl,jdbcType=DOUBLE},
+            </if>
+            <if test="conjunge != null">
+                conjunge = #{conjunge,jdbcType=DOUBLE},
+            </if>
+            <if test="surfAer != null">
+                surf_aer = #{surfAer,jdbcType=DOUBLE},
+            </if>
+            <if test="henry != null">
+                henry = #{henry,jdbcType=DOUBLE},
+            </if>
+            <if test="kairWater != null">
+                kair_water = #{kairWater,jdbcType=DOUBLE},
+            </if>
+            <if test="fassAer != null">
+                fass_aer = #{fassAer,jdbcType=DOUBLE},
+            </if>
+            <if test="kpSoil != null">
+                kp_soil = #{kpSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="kpSusp != null">
+                kp_susp = #{kpSusp,jdbcType=DOUBLE},
+            </if>
+            <if test="kpSed != null">
+                kp_sed = #{kpSed,jdbcType=DOUBLE},
+            </if>
+            <if test="ksoilWater != null">
+                ksoil_water = #{ksoilWater,jdbcType=DOUBLE},
+            </if>
+            <if test="ksuspWater != null">
+                ksusp_water = #{ksuspWater,jdbcType=DOUBLE},
+            </if>
+            <if test="ksedWater != null">
+                ksed_water = #{ksedWater,jdbcType=DOUBLE},
+            </if>
+            <if test="bmf1 != null">
+                bmf1 = #{bmf1,jdbcType=DOUBLE},
+            </if>
+            <if test="bmf2 != null">
+                bmf2 = #{bmf2,jdbcType=DOUBLE},
+            </if>
+            <if test="bcfWorm != null">
+                bcf_worm = #{bcfWorm,jdbcType=DOUBLE},
+            </if>
+            <if test="khydrWater != null">
+                khydr_water = #{khydrWater,jdbcType=DOUBLE},
+            </if>
+            <if test="kbioStp != null">
+                kbio_stp = #{kbioStp,jdbcType=DOUBLE},
+            </if>
+            <if test="kdegStp != null">
+                kdeg_stp = #{kdegStp,jdbcType=DOUBLE},
+            </if>
+            <if test="kdegStp2 != null">
+                kdeg_stp2 = #{kdegStp2,jdbcType=DOUBLE},
+            </if>
+            <if test="kdegAir != null">
+                kdeg_air = #{kdegAir,jdbcType=DOUBLE},
+            </if>
+            <if test="kphotoWater != null">
+                kphoto_water = #{kphotoWater,jdbcType=DOUBLE},
+            </if>
+            <if test="kbioSed != null">
+                kbio_sed = #{kbioSed,jdbcType=DOUBLE},
+            </if>
+            <if test="kbioFresh != null">
+                kbio_fresh = #{kbioFresh,jdbcType=DOUBLE},
+            </if>
+            <if test="kbioSoil != null">
+                kbio_soil = #{kbioSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="bcfFish != null">
+                bcf_fish = #{bcfFish,jdbcType=DOUBLE},
+            </if>
+            <if test="sourceType != null">
+                source_type = #{sourceType,jdbcType=VARCHAR},
+            </if>
+            <if test="elocalWater != null">
+                elocal_water = #{elocalWater,jdbcType=DOUBLE},
+            </if>
+            <if test="elocalAir != null">
+                elocal_air = #{elocalAir,jdbcType=DOUBLE},
+            </if>
+            <if test="elocalDirectwater != null">
+                elocal_directwater = #{elocalDirectwater,jdbcType=DOUBLE},
+            </if>
+            <if test="temission != null">
+                temission = #{temission,jdbcType=DOUBLE},
+            </if>
+            <if test="femisssionWater != null">
+                femisssion_water = #{femisssionWater,jdbcType=DOUBLE},
+            </if>
+            <if test="femisssionAir != null">
+                femisssion_air = #{femisssionAir,jdbcType=DOUBLE},
+            </if>
+            <if test="femisssionSoil != null">
+                femisssion_soil = #{femisssionSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fmainsource != null">
+                fmainsource = #{fmainsource,jdbcType=DOUBLE},
+            </if>
+            <if test="fabatementWater != null">
+                fabatement_water = #{fabatementWater,jdbcType=DOUBLE},
+            </if>
+            <if test="fabatementAir != null">
+                fabatement_air = #{fabatementAir,jdbcType=DOUBLE},
+            </if>
+            <if test="elocalSoil != null">
+                elocal_soil = #{elocalSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fabatementSoil != null">
+                fabatement_soil = #{fabatementSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpWater != null">
+                fstp_water = #{fstpWater,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpAir != null">
+                fstp_air = #{fstpAir,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpSludge != null">
+                fstp_sludge = #{fstpSludge,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpDegrade != null">
+                fstp_degrade = #{fstpDegrade,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpTotal != null">
+                fstp_total = #{fstpTotal,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpWater2 != null">
+                fstp_water2 = #{fstpWater2,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpAir2 != null">
+                fstp_air2 = #{fstpAir2,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpSludge2 != null">
+                fstp_sludge2 = #{fstpSludge2,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpDegrade2 != null">
+                fstp_degrade2 = #{fstpDegrade2,jdbcType=DOUBLE},
+            </if>
+            <if test="fstpTotal2 != null">
+                fstp_total2 = #{fstpTotal2,jdbcType=DOUBLE},
+            </if>
+            <if test="elocalstpWater != null">
+                elocalstp_water = #{elocalstpWater,jdbcType=DOUBLE},
+            </if>
+            <if test="elocalstpAir != null">
+                elocalstp_air = #{elocalstpAir,jdbcType=DOUBLE},
+            </if>
+            <if test="csludge != null">
+                csludge = #{csludge,jdbcType=DOUBLE},
+            </if>
+            <if test="sludgerate != null">
+                sludgerate = #{sludgerate,jdbcType=DOUBLE},
+            </if>
+            <if test="clocalWater != null">
+                clocal_water = #{clocalWater,jdbcType=DOUBLE},
+            </if>
+            <if test="clocalDirectwater != null">
+                clocal_directwater = #{clocalDirectwater,jdbcType=DOUBLE},
+            </if>
+            <if test="deptotal != null">
+                deptotal = #{deptotal,jdbcType=DOUBLE},
+            </if>
+            <if test="depstdAer != null">
+                depstd_aer = #{depstdAer,jdbcType=DOUBLE},
+            </if>
+            <if test="depstdGas != null">
+                depstd_gas = #{depstdGas,jdbcType=DOUBLE},
+            </if>
+            <if test="deptotalAnn != null">
+                deptotal_ann = #{deptotalAnn,jdbcType=DOUBLE},
+            </if>
+            <if test="dair != null">
+                dair = #{dair,jdbcType=DOUBLE},
+            </if>
+            <if test="cstdAir != null">
+                cstd_air = #{cstdAir,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalAirAnn != null">
+                peclocal_air_ann = #{peclocalAirAnn,jdbcType=DOUBLE},
+            </if>
+            <if test="kSoil != null">
+                k_soil = #{kSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="kvolat != null">
+                kvolat = #{kvolat,jdbcType=DOUBLE},
+            </if>
+            <if test="kaslAir != null">
+                kasl_air = #{kaslAir,jdbcType=DOUBLE},
+            </if>
+            <if test="kaslSoil != null">
+                kasl_soil = #{kaslSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="corrVolatS != null">
+                corr_volat_s = #{corrVolatS,jdbcType=DOUBLE},
+            </if>
+            <if test="kleach != null">
+                kleach = #{kleach,jdbcType=DOUBLE},
+            </if>
+            <if test="finfSoil != null">
+                finf_soil = #{finfSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="veffS1r != null">
+                veff_s1r = #{veffS1r,jdbcType=DOUBLE},
+            </if>
+            <if test="deffS1r != null">
+                deff_s1r = #{deffS1r,jdbcType=DOUBLE},
+            </if>
+            <if test="dp != null">
+                dp = #{dp,jdbcType=DOUBLE},
+            </if>
+            <if test="csoilTen0 != null">
+                csoil_ten_0 = #{csoilTen0,jdbcType=DOUBLE},
+            </if>
+            <if test="csoilFive0 != null">
+                csoil_five_0 = #{csoilFive0,jdbcType=DOUBLE},
+            </if>
+            <if test="cdepSoilTen0 != null">
+                cdep_soil_ten_0 = #{cdepSoilTen0,jdbcType=DOUBLE},
+            </if>
+            <if test="cdepSoilFive0 != null">
+                cdep_soil_five_0 = #{cdepSoilFive0,jdbcType=DOUBLE},
+            </if>
+            <if test="csludgeSoilOne0 != null">
+                csludge_soil_one_0 = #{csludgeSoilOne0,jdbcType=DOUBLE},
+            </if>
+            <if test="csludgeSoilTen0 != null">
+                csludge_soil_ten_0 = #{csludgeSoilTen0,jdbcType=DOUBLE},
+            </if>
+            <if test="csludgeSoilFive0 != null">
+                csludge_soil_five_0 = #{csludgeSoilFive0,jdbcType=DOUBLE},
+            </if>
+            <if test="facc != null">
+                facc = #{facc,jdbcType=DOUBLE},
+            </if>
+            <if test="clocalSoil30 != null">
+                clocal_soil_30 = #{clocalSoil30,jdbcType=DOUBLE},
+            </if>
+            <if test="clocalSoil180 != null">
+                clocal_soil_180 = #{clocalSoil180,jdbcType=DOUBLE},
+            </if>
+            <if test="tavSoil != null">
+                tav_soil = #{tavSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSoilPorew != null">
+                peclocal_soil_porew = #{peclocalSoilPorew,jdbcType=DOUBLE},
+            </if>
+            <if test="cfish != null">
+                cfish = #{cfish,jdbcType=DOUBLE},
+            </if>
+            <if test="pecaquPredator != null">
+                pecaqu_predator = #{pecaquPredator,jdbcType=DOUBLE},
+            </if>
+            <if test="pecaquToppredator != null">
+                pecaqu_toppredator = #{pecaquToppredator,jdbcType=DOUBLE},
+            </if>
+            <if test="pecterPredator != null">
+                pecter_predator = #{pecterPredator,jdbcType=DOUBLE},
+            </if>
+            <if test="pecregAir != null">
+                pecreg_air = #{pecregAir,jdbcType=DOUBLE},
+            </if>
+            <if test="pecregWater != null">
+                pecreg_water = #{pecregWater,jdbcType=DOUBLE},
+            </if>
+            <if test="pecregSoil != null">
+                pecreg_soil = #{pecregSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="pecregSoilPorew != null">
+                pecreg_soil_porew = #{pecregSoilPorew,jdbcType=DOUBLE},
+            </if>
+            <if test="pecstp != null">
+                pecstp = #{pecstp,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalWater != null">
+                peclocal_water = #{peclocalWater,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalWaterAnn != null">
+                peclocal_water_ann = #{peclocalWaterAnn,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSed != null">
+                peclocal_sed = #{peclocalSed,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSoil30 != null">
+                peclocal_soil_30 = #{peclocalSoil30,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSoil180 != null">
+                peclocal_soil_180 = #{peclocalSoil180,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalGrw != null">
+                peclocal_grw = #{peclocalGrw,jdbcType=DOUBLE},
+            </if>
+            <if test="fPur != null">
+                f_pur = #{fPur,jdbcType=DOUBLE},
+            </if>
+            <if test="pecDrwl != null">
+                pec_drwl = #{pecDrwl,jdbcType=DOUBLE},
+            </if>
+            <if test="addinh != null">
+                addinh = #{addinh,jdbcType=DOUBLE},
+            </if>
+            <if test="addoralSoil != null">
+                addoral_soil = #{addoralSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="addoralFish != null">
+                addoral_fish = #{addoralFish,jdbcType=DOUBLE},
+            </if>
+            <if test="addoralWater != null">
+                addoral_water = #{addoralWater,jdbcType=DOUBLE},
+            </if>
+            <if test="addt != null">
+                addt = #{addt,jdbcType=DOUBLE},
+            </if>
+            <if test="pecstpPnec != null">
+                pecstp_pnec = #{pecstpPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalWaterPnec != null">
+                peclocal_water_pnec = #{peclocalWaterPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSedPnec != null">
+                peclocal_sed_pnec = #{peclocalSedPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalSoil30Pnec != null">
+                peclocal_soil_30_pnec = #{peclocalSoil30Pnec,jdbcType=DOUBLE},
+            </if>
+            <if test="peclocalGrwPnec != null">
+                peclocal_grw_pnec = #{peclocalGrwPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="pecaquPredatorPnec != null">
+                pecaqu_predator_pnec = #{pecaquPredatorPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="pecterPredatorPnec != null">
+                pecter_predator_pnec = #{pecterPredatorPnec,jdbcType=DOUBLE},
+            </if>
+            <if test="addinhDnel != null">
+                addinh_dnel = #{addinhDnel,jdbcType=DOUBLE},
+            </if>
+            <if test="addoralWaterDnel != null">
+                addoral_water_dnel = #{addoralWaterDnel,jdbcType=DOUBLE},
+            </if>
+            <if test="addoralFoodDnel != null">
+                addoral_food_dnel = #{addoralFoodDnel,jdbcType=DOUBLE},
+            </if>
+            <if test="addtDnel != null">
+                addt_dnel = #{addtDnel,jdbcType=DOUBLE},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified=#{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where cas = #{cas,jdbcType=VARCHAR}
+    </update>
+
+    <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from density
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <select id="findByCas" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from density
+    where cas = #{cas,jdbcType=VARCHAR} and creator = #{creator,jdbcType=VARCHAR}
+   </select>
+
+    <select id="findPage" resultMap="BaseResultMap">
+    select * from density  where creator = #{creator,jdbcType=VARCHAR}
+  </select>
+    <delete id="deleteByCas" parameterType="java.lang.String">
+    delete from density
+    where cas = #{cas,jdbcType=VARCHAR}  and creator = #{creator,jdbcType=VARCHAR}
+  </delete>
+</mapper>

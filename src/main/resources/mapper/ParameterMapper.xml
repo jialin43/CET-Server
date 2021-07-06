@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.nwafu.cet.dao.ParameterMapper">
+
+    <resultMap id="BaseResultMap" type="cn.nwafu.cet.model.Parameter">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="rho_solid" jdbcType="DOUBLE" property="rhoSolid"/>
+        <result column="rho_water" jdbcType="DOUBLE" property="rhoWater"/>
+        <result column="rho_air" jdbcType="DOUBLE" property="rhoAir"/>
+        <result column="temp" jdbcType="DOUBLE" property="temp"/>
+        <result column="wind" jdbcType="DOUBLE" property="wind"/>
+        <result column="rain_rate" jdbcType="DOUBLE" property="rainRate"/>
+        <result column="effluent_stp" jdbcType="DOUBLE" property="effluentStp"/>
+        <result column="capacity_stp" jdbcType="DOUBLE" property="capacityStp"/>
+        <result column="sewage_flow" jdbcType="DOUBLE" property="sewageFlow"/>
+        <result column="suspconcinf" jdbcType="DOUBLE" property="suspconcinf"/>
+        <result column="surplus_sludge" jdbcType="DOUBLE" property="surplusSludge"/>
+        <result column="flow" jdbcType="DOUBLE" property="flow"/>
+        <result column="susp_water" jdbcType="DOUBLE" property="suspWater"/>
+        <result column="fsoild_susp" jdbcType="DOUBLE" property="fsoildSusp"/>
+        <result column="fwater_susp" jdbcType="DOUBLE" property="fwaterSusp"/>
+        <result column="foc_susp" jdbcType="DOUBLE" property="focSusp"/>
+        <result column="rho_susp" jdbcType="DOUBLE" property="rhoSusp"/>
+        <result column="fsoild_sed" jdbcType="DOUBLE" property="fsoildSed"/>
+        <result column="fwater_sed" jdbcType="DOUBLE" property="fwaterSed"/>
+        <result column="rho_sed" jdbcType="DOUBLE" property="rhoSed"/>
+        <result column="foc_sed" jdbcType="DOUBLE" property="focSed"/>
+        <result column="conv_sed" jdbcType="DOUBLE" property="convSed"/>
+        <result column="rho_soil" jdbcType="DOUBLE" property="rhoSoil"/>
+        <result column="fsolid_soil" jdbcType="DOUBLE" property="fsolidSoil"/>
+        <result column="fwater_soil" jdbcType="DOUBLE" property="fwaterSoil"/>
+        <result column="fair_soil" jdbcType="DOUBLE" property="fairSoil"/>
+        <result column="foc_soil" jdbcType="DOUBLE" property="focSoil"/>
+        <result column="conv_soil" jdbcType="DOUBLE" property="convSoil"/>
+        <result column="depth_soil" jdbcType="DOUBLE" property="depthSoil"/>
+        <result column="appl_sludge" jdbcType="DOUBLE" property="applSludge"/>
+        <result column="rho_worm" jdbcType="DOUBLE" property="rhoWorm"/>
+        <result column="fgut_worm" jdbcType="DOUBLE" property="fgutWorm"/>
+        <result column="ir_air" jdbcType="DOUBLE" property="irAir"/>
+        <result column="et" jdbcType="DOUBLE" property="et"/>
+        <result column="ef" jdbcType="DOUBLE" property="ef"/>
+        <result column="ed" jdbcType="DOUBLE" property="ed"/>
+        <result column="bw" jdbcType="DOUBLE" property="bw"/>
+        <result column="at" jdbcType="DOUBLE" property="at"/>
+        <result column="ir_fish" jdbcType="DOUBLE" property="irFish"/>
+        <result column="ir_water" jdbcType="DOUBLE" property="irWater"/>
+        <result column="ir_s" jdbcType="DOUBLE" property="irS"/>
+        <result column="creator" jdbcType="VARCHAR" property="creator" />
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+
+    </resultMap>
+
+    <insert id="add" parameterType="cn.nwafu.cet.model.Parameter">
+        insert into parameter
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cas != null">
+                cas,
+            </if>
+            <if test="rhoSolid != null">
+                rho_solid,
+            </if>
+            <if test="rhoWater != null">
+                rho_water,
+            </if>
+            <if test="rhoAir != null">
+                rho_air,
+            </if>
+            <if test="temp != null">
+                temp,
+            </if>
+            <if test="wind != null">
+                wind,
+            </if>
+            <if test="rainRate != null">
+                rain_rate,
+            </if>
+            <if test="effluentStp != null">
+                effluent_stp,
+            </if>
+            <if test="capacityStp != null">
+                capacity_stp,
+            </if>
+            <if test="sewageFlow != null">
+                sewage_flow,
+            </if>
+            <if test="suspconcinf != null">
+                suspconcinf,
+            </if>
+            <if test="surplusSludge != null">
+                surplus_sludge,
+            </if>
+            <if test="flow != null">
+                flow,
+            </if>
+            <if test="suspWater != null">
+                susp_water,
+            </if>
+            <if test="fsoildSusp != null">
+                fsoild_susp,
+            </if>
+            <if test="fwaterSusp != null">
+                fwater_susp,
+            </if>
+            <if test="focSusp != null">
+                foc_susp,
+            </if>
+            <if test="rhoSusp != null">
+                rho_susp,
+            </if>
+            <if test="fsoildSed != null">
+                fsoild_sed,
+            </if>
+            <if test="fwaterSed != null">
+                fwater_sed,
+            </if>
+            <if test="rhoSed != null">
+                rho_sed,
+            </if>
+            <if test="focSed != null">
+                foc_sed,
+            </if>
+            <if test="convSed != null">
+                conv_sed,
+            </if>
+            <if test="rhoSoil != null">
+                rho_soil,
+            </if>
+            <if test="fsolidSoil != null">
+                fsolid_soil,
+            </if>
+            <if test="fwaterSoil != null">
+                fwater_soil,
+            </if>
+            <if test="fairSoil != null">
+                fair_soil,
+            </if>
+            <if test="focSoil != null">
+                foc_soil,
+            </if>
+            <if test="convSoil != null">
+                conv_soil,
+            </if>
+            <if test="depthSoil != null">
+                depth_soil,
+            </if>
+            <if test="applSludge != null">
+                appl_sludge,
+            </if>
+            <if test="rhoWorm != null">
+                rho_worm,
+            </if>
+            <if test="fgutWorm != null">
+                fgut_worm,
+            </if>
+            <if test="irAir != null">
+                ir_air,
+            </if>
+            <if test="et != null">
+                et,
+            </if>
+            <if test="ef != null">
+                ef,
+            </if>
+            <if test="ed != null">
+                ed,
+            </if>
+            <if test="bw != null">
+                bw,
+            </if>
+            <if test="at != null">
+                at,
+            </if>
+            <if test="irFish != null">
+                ir_fish,
+            </if>
+            <if test="irWater != null">
+                ir_water,
+            </if>
+            <if test="irS != null">
+                ir_s,
+            </if>
+            <if test="creator != null">
+                creator,
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create,
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cas != null">
+                #{cas,jdbcType=VARCHAR},
+            </if>
+            <if test="rhoSolid != null">
+                #{rhoSolid,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoWater != null">
+                #{rhoWater,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoAir != null">
+                #{rhoAir,jdbcType=DOUBLE},
+            </if>
+            <if test="temp != null">
+                #{temp,jdbcType=DOUBLE},
+            </if>
+            <if test="wind != null">
+                #{wind,jdbcType=DOUBLE},
+            </if>
+            <if test="rainRate != null">
+                #{rainRate,jdbcType=DOUBLE},
+            </if>
+            <if test="effluentStp != null">
+                #{effluentStp,jdbcType=DOUBLE},
+            </if>
+            <if test="capacityStp != null">
+                #{capacityStp,jdbcType=DOUBLE},
+            </if>
+            <if test="sewageFlow != null">
+                #{sewageFlow,jdbcType=DOUBLE},
+            </if>
+            <if test="suspconcinf != null">
+                #{suspconcinf,jdbcType=DOUBLE},
+            </if>
+            <if test="surplusSludge != null">
+                #{surplusSludge,jdbcType=DOUBLE},
+            </if>
+            <if test="flow != null">
+                #{flow,jdbcType=DOUBLE},
+            </if>
+            <if test="suspWater != null">
+                #{suspWater,jdbcType=DOUBLE},
+            </if>
+            <if test="fsoildSusp != null">
+                #{fsoildSusp,jdbcType=DOUBLE},
+            </if>
+            <if test="fwaterSusp != null">
+                #{fwaterSusp,jdbcType=DOUBLE},
+            </if>
+            <if test="focSusp != null">
+                #{focSusp,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoSusp != null">
+                #{rhoSusp,jdbcType=DOUBLE},
+            </if>
+            <if test="fsoildSed != null">
+                #{fsoildSed,jdbcType=DOUBLE},
+            </if>
+            <if test="fwaterSed != null">
+                #{fwaterSed,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoSed != null">
+                #{rhoSed,jdbcType=DOUBLE},
+            </if>
+            <if test="focSed != null">
+                #{focSed,jdbcType=DOUBLE},
+            </if>
+            <if test="convSed != null">
+                #{convSed,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoSoil != null">
+                #{rhoSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fsolidSoil != null">
+                #{fsolidSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fwaterSoil != null">
+                #{fwaterSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fairSoil != null">
+                #{fairSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="focSoil != null">
+                #{focSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="convSoil != null">
+                #{convSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="depthSoil != null">
+                #{depthSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="applSludge != null">
+                #{applSludge,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoWorm != null">
+                #{rhoWorm,jdbcType=DOUBLE},
+            </if>
+            <if test="fgutWorm != null">
+                #{fgutWorm,jdbcType=DOUBLE},
+            </if>
+            <if test="irAir != null">
+                #{irAir,jdbcType=DOUBLE},
+            </if>
+            <if test="et != null">
+                #{et,jdbcType=DOUBLE},
+            </if>
+            <if test="ef != null">
+                #{ef,jdbcType=DOUBLE},
+            </if>
+            <if test="ed != null">
+                #{ed,jdbcType=DOUBLE},
+            </if>
+            <if test="bw != null">
+                #{bw,jdbcType=DOUBLE},
+            </if>
+            <if test="at != null">
+                #{at,jdbcType=DOUBLE},
+            </if>
+            <if test="irFish != null">
+                #{irFish,jdbcType=DOUBLE},
+            </if>
+            <if test="irWater != null">
+                #{irWater,jdbcType=DOUBLE},
+            </if>
+            <if test="irS != null">
+                #{irS,jdbcType=DOUBLE},
+            </if>
+            <if test="creator != null">
+                #{creator,jdbcType=VARCHAR},
+            </if>
+            <if test="gmtCreate != null">
+                #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="update" parameterType="cn.nwafu.cet.model.Parameter">
+        update parameter
+        <set>
+            <if test="cas != null">
+                cas = #{cas,jdbcType=VARCHAR},
+            </if>
+            <if test="rhoSolid != null">
+                rho_solid = #{rhoSolid,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoWater != null">
+                rho_water = #{rhoWater,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoAir != null">
+                rho_air = #{rhoAir,jdbcType=DOUBLE},
+            </if>
+            <if test="temp != null">
+                temp = #{temp,jdbcType=DOUBLE},
+            </if>
+            <if test="wind != null">
+                wind = #{wind,jdbcType=DOUBLE},
+            </if>
+            <if test="rainRate != null">
+                rain_rate = #{rainRate,jdbcType=DOUBLE},
+            </if>
+            <if test="effluentStp != null">
+                effluent_stp = #{effluentStp,jdbcType=DOUBLE},
+            </if>
+            <if test="capacityStp != null">
+                capacity_stp = #{capacityStp,jdbcType=DOUBLE},
+            </if>
+            <if test="sewageFlow != null">
+                sewage_flow = #{sewageFlow,jdbcType=DOUBLE},
+            </if>
+            <if test="suspconcinf != null">
+                suspconcinf = #{suspconcinf,jdbcType=DOUBLE},
+            </if>
+            <if test="surplusSludge != null">
+                surplus_sludge = #{surplusSludge,jdbcType=DOUBLE},
+            </if>
+            <if test="flow != null">
+                flow = #{flow,jdbcType=DOUBLE},
+            </if>
+            <if test="suspWater != null">
+                susp_water = #{suspWater,jdbcType=DOUBLE},
+            </if>
+            <if test="fsoildSusp != null">
+                fsoild_susp = #{fsoildSusp,jdbcType=DOUBLE},
+            </if>
+            <if test="fwaterSusp != null">
+                fwater_susp = #{fwaterSusp,jdbcType=DOUBLE},
+            </if>
+            <if test="focSusp != null">
+                foc_susp = #{focSusp,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoSusp != null">
+                rho_susp = #{rhoSusp,jdbcType=DOUBLE},
+            </if>
+            <if test="fsoildSed != null">
+                fsoild_sed = #{fsoildSed,jdbcType=DOUBLE},
+            </if>
+            <if test="fwaterSed != null">
+                fwater_sed = #{fwaterSed,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoSed != null">
+                rho_sed = #{rhoSed,jdbcType=DOUBLE},
+            </if>
+            <if test="focSed != null">
+                foc_sed = #{focSed,jdbcType=DOUBLE},
+            </if>
+            <if test="convSed != null">
+                conv_sed = #{convSed,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoSoil != null">
+                rho_soil = #{rhoSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fsolidSoil != null">
+                fsolid_soil = #{fsolidSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fwaterSoil != null">
+                fwater_soil = #{fwaterSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="fairSoil != null">
+                fair_soil = #{fairSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="focSoil != null">
+                foc_soil = #{focSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="convSoil != null">
+                conv_soil = #{convSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="depthSoil != null">
+                depth_soil = #{depthSoil,jdbcType=DOUBLE},
+            </if>
+            <if test="applSludge != null">
+                appl_sludge = #{applSludge,jdbcType=DOUBLE},
+            </if>
+            <if test="rhoWorm != null">
+                rho_worm = #{rhoWorm,jdbcType=DOUBLE},
+            </if>
+            <if test="fgutWorm != null">
+                fgut_worm = #{fgutWorm,jdbcType=DOUBLE},
+            </if>
+            <if test="irAir != null">
+                ir_air = #{irAir,jdbcType=DOUBLE},
+            </if>
+            <if test="et != null">
+                et = #{et,jdbcType=DOUBLE},
+            </if>
+            <if test="ef != null">
+                ef = #{ef,jdbcType=DOUBLE},
+            </if>
+            <if test="ed != null">
+                ed = #{ed,jdbcType=DOUBLE},
+            </if>
+            <if test="bw != null">
+                bw = #{bw,jdbcType=DOUBLE},
+            </if>
+            <if test="at != null">
+                at = #{at,jdbcType=DOUBLE},
+            </if>
+            <if test="irFish != null">
+                ir_fish = #{irFish,jdbcType=DOUBLE},
+            </if>
+            <if test="irWater != null">
+                ir_water = #{irWater,jdbcType=DOUBLE},
+            </if>
+            <if test="irS != null">
+                ir_s = #{irS,jdbcType=DOUBLE},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified=#{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where cas = #{cas,jdbcType=VARCHAR}
+    </update>
+    <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from parameter
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <select id="findByCas" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from parameter
+    where cas = #{cas,jdbcType=VARCHAR}  and creator = #{creator,jdbcType=VARCHAR}
+   </select>
+    <delete id="deleteByCas" parameterType="java.lang.String">
+    delete from parameter
+    where cas = #{cas,jdbcType=VARCHAR} and creator = #{creator,jdbcType=VARCHAR}
+  </delete>
+</mapper>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.nwafu.cet.dao.MailResetMapper">
+
+  <resultMap id="BaseResultMap" type="cn.nwafu.cet.model.MailReset">
+	<id column="id" jdbcType="INTEGER" property="id" />
+	<result column="email" jdbcType="VARCHAR" property="email" />
+	<result column="sid" jdbcType="VARCHAR" property="sid" />
+	<result column="expire_time" jdbcType="TIMESTAMP" property="expireTime" />
+  </resultMap>
+  
+  <insert id="add" parameterType="cn.nwafu.cet.model.MailReset">
+    insert into mailreset
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="sid != null">
+        sid,
+      </if>
+      <if test="expireTime != null">
+        expire_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="sid != null">
+        #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="expireTime != null">
+        #{expireTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+  <delete id="delete" parameterType="java.lang.Integer">
+    delete from mailreset
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  
+  <update id="update" parameterType="cn.nwafu.cet.model.MailReset">
+    update mailreset
+    <set>
+      <if test="id != null">
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="sid != null">
+        sid = #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="expireTime != null">
+        expire_time = #{expireTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from mailreset
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <select id="findPage" resultMap="BaseResultMap">
+    select * from mailreset
+  </select>
+  <select id="findByMail" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from mailreset
+    where email = #{email,jdbcType=VARCHAR}
+  </select>
+</mapper>

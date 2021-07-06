@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.nwafu.cet.dao.InputMapper">
+
+  <resultMap id="BaseResultMap" type="cn.nwafu.cet.model.Input">
+	<id column="id" jdbcType="INTEGER" property="id" />
+    <result column="cas" jdbcType="VARCHAR" property="cas" />
+    <result column="wzmc" jdbcType="VARCHAR" property="wzmc" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+    <result column="fzs" jdbcType="VARCHAR" property="fzs" />
+	<result column="molw" jdbcType="DOUBLE" property="molw" />
+	<result column="vp_temptest" jdbcType="DOUBLE" property="vpTemptest" />
+	<result column="sol_temptest" jdbcType="DOUBLE" property="solTemptest" />
+	<result column="koc" jdbcType="DOUBLE" property="koc" />
+	<result column="kow" jdbcType="DOUBLE" property="kow" />
+	<result column="biodeg" jdbcType="VARCHAR" property="biodeg" />
+	<result column="bcf_fish" jdbcType="DOUBLE" property="bcfFish" />
+	<result column="khydr_water" jdbcType="VARCHAR" property="khydrWater" />
+	<result column="solid" jdbcType="TINYINT" property="solid" />
+	<result column="tempmelt" jdbcType="DOUBLE" property="tempmelt" />
+	<result column="source_type" jdbcType="VARCHAR" property="sourceType" />
+	<result column="temission" jdbcType="DOUBLE" property="temission" />
+	<result column="elocal_water" jdbcType="DOUBLE" property="elocalWater" />
+	<result column="elocal_air" jdbcType="DOUBLE" property="elocalAir" />
+	<result column="elocal_directwater" jdbcType="DOUBLE" property="elocalDirectwater" />
+	<result column="pecrea_air" jdbcType="DOUBLE" property="pecreaAir" />
+	<result column="pecreg_water" jdbcType="DOUBLE" property="pecregWater" />
+	<result column="pecreg_soil" jdbcType="DOUBLE" property="pecregSoil" />
+    <result column="temp_Vptest" jdbcType="DOUBLE" property="tempVptest" />
+    <result column="temp_Soltest" jdbcType="DOUBLE" property="tempSoltest" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  
+  <insert id="add" parameterType="cn.nwafu.cet.model.Input">
+    insert into input
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+
+      <if test="cas != null">
+        cas,
+      </if>
+      <if test="wzmc != null">
+        wzmc,
+      </if>
+      <if test="mark != null">
+        mark,
+      </if>
+      <if test="fzs != null">
+        fzs,
+      </if>
+      <if test="molw != null">
+        molw,
+      </if>
+      <if test="vpTemptest != null">
+        vp_temptest,
+      </if>
+      <if test="solTemptest != null">
+        sol_temptest,
+      </if>
+      <if test="koc != null">
+        koc,
+      </if>
+      <if test="kow != null">
+        kow,
+      </if>
+      <if test="biodeg != null">
+        biodeg,
+      </if>
+      <if test="bcfFish != null">
+        bcf_fish,
+      </if>
+      <if test="khydrWater != null">
+        khydr_water,
+      </if>
+      <if test="solid != null">
+        solid,
+      </if>
+      <if test="tempmelt != null">
+        tempmelt,
+      </if>
+      <if test="sourceType != null">
+        source_type,
+      </if>
+      <if test="temission != null">
+        temission,
+      </if>
+      <if test="elocalWater != null">
+        elocal_water,
+      </if>
+      <if test="elocalAir != null">
+        elocal_air,
+      </if>
+      <if test="elocalDirectwater != null">
+        elocal_directwater,
+      </if>
+      <if test="pecreaAir != null">
+        pecrea_air,
+      </if>
+      <if test="pecregWater != null">
+        pecreg_water,
+      </if>
+      <if test="pecregSoil != null">
+        pecreg_soil,
+      </if>
+      <if test="tempVptest != null">
+        temp_Vptest,
+      </if>
+      <if test="tempSoltest != null">
+        temp_Soltest,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+      <if test="cas != null">
+        #{cas,jdbcType=VARCHAR},
+      </if>
+      <if test="wzmc != null">
+        #{wzmc,jdbcType=VARCHAR},
+      </if>
+      <if test="mark != null">
+        #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="fzs != null">
+        #{fzs,jdbcType=VARCHAR},
+      </if>
+      <if test="molw != null">
+        #{molw,jdbcType=DOUBLE},
+      </if>
+      <if test="vpTemptest != null">
+        #{vpTemptest,jdbcType=DOUBLE},
+      </if>
+      <if test="solTemptest != null">
+        #{solTemptest,jdbcType=DOUBLE},
+      </if>
+      <if test="koc != null">
+        #{koc,jdbcType=DOUBLE},
+      </if>
+      <if test="kow != null">
+        #{kow,jdbcType=DOUBLE},
+      </if>
+      <if test="biodeg != null">
+        #{biodeg,jdbcType=VARCHAR},
+      </if>
+      <if test="bcfFish != null">
+        #{bcfFish,jdbcType=DOUBLE},
+      </if>
+      <if test="khydrWater != null">
+        #{khydrWater,jdbcType=VARCHAR},
+      </if>
+      <if test="solid != null">
+        #{solid,jdbcType=TINYINT},
+      </if>
+      <if test="tempmelt != null">
+        #{tempmelt,jdbcType=DOUBLE},
+      </if>
+      <if test="sourceType != null">
+        #{sourceType,jdbcType=VARCHAR},
+      </if>
+      <if test="temission != null">
+        #{temission,jdbcType=DOUBLE},
+      </if>
+      <if test="elocalWater != null">
+        #{elocalWater,jdbcType=DOUBLE},
+      </if>
+      <if test="elocalAir != null">
+        #{elocalAir,jdbcType=DOUBLE},
+      </if>
+      <if test="elocalDirectwater != null">
+        #{elocalDirectwater,jdbcType=DOUBLE},
+      </if>
+      <if test="pecreaAir != null">
+        #{pecreaAir,jdbcType=DOUBLE},
+      </if>
+      <if test="pecregWater != null">
+        #{pecregWater,jdbcType=DOUBLE},
+      </if>
+      <if test="pecregSoil != null">
+        #{pecregSoil,jdbcType=DOUBLE},
+      </if>
+      <if test="tempVptest != null">
+        #{tempVptest,jdbcType=DOUBLE},
+      </if>
+      <if test="tempSoltest != null">
+        #{tempSoltest,jdbcType=DOUBLE},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+  <delete id="delete" parameterType="java.lang.Integer">
+    delete from input
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  
+  <update id="update" parameterType="cn.nwafu.cet.model.Input">
+    update input
+    <set>
+      <if test="id != null">
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cas != null">
+        cas = #{cas,jdbcType=VARCHAR},
+      </if>
+      <if test="wzmc != null">
+        wzmc = #{wzmc,jdbcType=VARCHAR},
+      </if>
+      <if test="mark != null">
+        mark = #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="fzs != null">
+        fzs = #{fzs,jdbcType=VARCHAR},
+      </if>
+      <if test="molw != null">
+        molw = #{molw,jdbcType=DOUBLE},
+      </if>
+      <if test="vpTemptest != null">
+        vp_temptest = #{vpTemptest,jdbcType=DOUBLE},
+      </if>
+      <if test="solTemptest != null">
+        sol_temptest = #{solTemptest,jdbcType=DOUBLE},
+      </if>
+      <if test="koc != null">
+        koc = #{koc,jdbcType=DOUBLE},
+      </if>
+      <if test="kow != null">
+        kow = #{kow,jdbcType=DOUBLE},
+      </if>
+      <if test="biodeg != null">
+        biodeg = #{biodeg,jdbcType=VARCHAR},
+      </if>
+      <if test="bcfFish != null">
+        bcf_fish = #{bcfFish,jdbcType=DOUBLE},
+      </if>
+      <if test="khydrWater != null">
+        khydr_water = #{khydrWater,jdbcType=VARCHAR},
+      </if>
+      <if test="solid != null">
+        solid = #{solid,jdbcType=TINYINT},
+      </if>
+      <if test="tempmelt != null">
+        tempmelt = #{tempmelt,jdbcType=DOUBLE},
+      </if>
+      <if test="sourceType != null">
+        source_type = #{sourceType,jdbcType=VARCHAR},
+      </if>
+      <if test="temission != null">
+        temission = #{temission,jdbcType=DOUBLE},
+      </if>
+      <if test="elocalWater != null">
+        elocal_water = #{elocalWater,jdbcType=DOUBLE},
+      </if>
+      <if test="elocalAir != null">
+        elocal_air = #{elocalAir,jdbcType=DOUBLE},
+      </if>
+      <if test="elocalDirectwater != null">
+        elocal_directwater = #{elocalDirectwater,jdbcType=DOUBLE},
+      </if>
+      <if test="pecreaAir != null">
+        pecrea_air = #{pecreaAir,jdbcType=DOUBLE},
+      </if>
+      <if test="pecregWater != null">
+        pecreg_water = #{pecregWater,jdbcType=DOUBLE},
+      </if>
+      <if test="pecregSoil != null">
+        pecreg_soil = #{pecregSoil,jdbcType=DOUBLE},
+      </if>
+
+      <if test="tempVptest != null">
+        temp_Vptest = #{pecregSoil,jdbcType=DOUBLE},
+      </if>
+      <if test="tempSoltest != null">
+        temp_Soltest = #{pecregSoil,jdbcType=DOUBLE},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified=#{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from input
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="findByCas" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from input
+    where cas = #{cas,jdbcType=VARCHAR} and creator = #{creator,jdbcType=VARCHAR}
+  </select>
+  <select id="findPage" resultMap="BaseResultMap">
+    select * from input where creator = #{creator,jdbcType=VARCHAR}
+  </select>
+
+  <select id="findPageByCas" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <bind name="cas" value="'%' + _parameter.cas + '%'" />
+    select * from input
+    where creator = #{creator,jdbcType=VARCHAR} and (cas like #{cas} or wzmc like #{cas} )
+  </select>
+</mapper>
